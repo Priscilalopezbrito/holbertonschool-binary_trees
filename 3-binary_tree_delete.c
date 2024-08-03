@@ -8,6 +8,10 @@
 void binary_tree_delete(binary_tree_t *tree)
 {
 	if (tree == NULL)
+<<<<<<< HEAD
+=======
+		return;
+>>>>>>> 4c71b2bfa836ad5444d160777e914d71f592e96a
 	{
 		binary_tree_delete(tree->left);
 		binary_tree_delete(tree->right);
@@ -15,4 +19,7 @@ void binary_tree_delete(binary_tree_t *tree)
 	}
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4c71b2bfa836ad5444d160777e914d71f592e96a
