@@ -4,7 +4,7 @@
  * @tree: pointer to root node of tree to measure the balance factor
  * Return: If tree is NULL, return 0
  **/
-size_t binary_tree_balance(const binary_tree_t *tree);
+size_t binary_tree_height(const binary_tree_t *tree);
 
 int binary_tree_balance(const binary_tree_t *tree)
 {
@@ -14,8 +14,13 @@ int binary_tree_balance(const binary_tree_t *tree)
 	{
 		return (0);
 	}
+	/*Check subtrees recursivly*/
 	leftHeight = binary_tree_height(tree->left);
 	rightHeight = binary_tree_height(tree->right);
+	/**
+	 * formula:
+	 * balanceFactor = height(leftSubTree) - height(rightSubTree)
+	 **/
 	return (leftHeight - rightHeight);
 }
 
