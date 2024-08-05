@@ -1,12 +1,14 @@
 #include "binary_trees.h"
+
+int _perfect(const binary_tree_t *tree, int dep, int lev);
+
+size_t _depth(const binary_tree_t *tree);
+
 /**
  * binary_tree_is_perfect- checks if a binary tree is perfect
  * @tree: pointer to the root node of the tree to check
  * Return: If tree is NULL, your function must return 0
  **/
-int _perfect(const binary_tree_t *tree, int d, int l);
-size_t _depth(const binary_tree_t *tree);
-
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	int d;
@@ -26,6 +28,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
  * @lev: level
  * Return: int
  **/
+
 int _perfect(const binary_tree_t *tree, int dep, int lev)
 {
 	if (tree == NULL)
@@ -40,7 +43,8 @@ int _perfect(const binary_tree_t *tree, int dep, int lev)
 	{
 		return (0);
 	}
-	return (_perfect(tree->left, dep, lev + 1) && _perfect(tree->right, dep, lev +1));
+	return (_perfect(tree->left, dep, lev + 1) &&
+			_perfect(tree->right, dep, lev + 1));
 }
 
 /**
@@ -48,6 +52,7 @@ int _perfect(const binary_tree_t *tree, int dep, int lev)
  * @tree:  pointer to the node to measure the depth
  * Return: If tree is NULL, return 0
  **/
+
 size_t _depth(const binary_tree_t *tree)
 {
 	unsigned int depth = 0;
